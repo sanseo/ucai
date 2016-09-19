@@ -1,0 +1,21 @@
+#change{
+    width: 330px;
+    height: 70px;
+    background-color: red;
+}
+.range_R ,.range_B,.range_G{
+    width: 100px;
+    height: 70px;
+}
+.rgbnum{
+    width: 330px;
+    height: 20px;
+    background-color: red;
+}
+.rnum ,.gnum,.bnum{
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+}

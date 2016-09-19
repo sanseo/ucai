@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--做之前思考的是步骤，步骤的拆分，和方法-->
+<!--首先创建好页面，然后滑动更改，
+滑动更改，首先要得到滑动产生的数值，然后把数值给予北京的RGB
+得到滑动产生的数值，她改变的是value值，也就是也得到这个块的value值
+然后得到，得到的快的对象-->
+<div id="change">
+    <form action="">
+        <input class="range_R" type="range" value="0" min="0" max="255" step="5">
+        <input class="range_G" type="range" value="0" min="0" max="255" step="5">
+        <input class="range_B" type="range" value="0" min="0" max="255" step="5">
+    </form>
+    <div class="rgbnum">
+        <div class="rnum">R</div>
+        <div class="gnum">G</div>
+        <div class="bnum">B</div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
