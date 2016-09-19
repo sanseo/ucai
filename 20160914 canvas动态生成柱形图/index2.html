@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--每个柱子30的宽，两边空5，一个竖块也是30，矩形总宽度480，总宽度550，高度300，总高度350-->
+<canvas id="canvas" width="600" height="300"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var pencil = canvas.getContext("2d");
+    var allblock = [60, 90, 150, 130, 170, 190, 125, 175, 155, 165, 155, 145];
+    var x = 55, y,allframe=100,blockStartY=250;
+    //    创造总的块
+    function drawLIne(fromX, fromY, toX, toY, text, textX, textY) {
+        pencil.beginPath();
+        pencil.moveTo(fromX, fromY);
+        pencil.lineTo(toX, toY);
+        pencil.stroke();
+        pencil.closePath();
+        if (text || text ==0) {
+            pencil.fillText(text + "", textX, textY);
+        }
+    }
+    function drawBlock(fromX, width, height, text, textX, textY) {
+//        pencil.beginPath();
+        pencil.strokeStyle = "blue";
+        pencil.lineWidth=30;
+//        pencil.lineTo(fromX+15,blockStartY-height);
+        pencil.fillText(text+"月",textX,textY);
+//        pencil.closePath();
+//        pencil.stroke();
+        //如果只给一个数一个var，但是不给他等于0什么的，有的时候对他进行数学操作会出现错误
+        //因为一个数没有初始值的话，系统默认为undefined，
+        var speed=height/allframe;
+        var currentHeight=0;
+        var frame=0;
+         var time=setInterval(function () {
+            frame++;
+            currentHeight+=speed;
+            pencil.beginPath();
+             pencil.moveTo(fromX+15,blockStartY);
+            pencil.lineTo(fromX+15,blockStartY-currentHeight);
+             console.log(frame);
+            if (frame==allframe){
+                clearInterval(time);
+                frame=allframe;
+            }
+            pencil.closePath();
+            pencil.stroke();
+        },10);
+    }
+    function createBackground() {
+        drawLIne(50, 50, 50, 250);
+        drawLIne(530, 50, 530, 250);
+        for (var i = 0; i < 11; i++) {
+            drawLIne(50, 50 + i * 20, 530, 50 + i * 20, (200 - i * 20), 10, 50 + i * 20);
+        }
+    }
+    function createAllBlock() {
+        for (var i = 0; i < 12; i++) {
+            drawBlock(x, 30, allblock[i],i+1,x,270);
+            x += 40;
+        }
+    }
+    function init() {
+        createBackground();
+        createAllBlock();
+    }
+    init();
+</script>
+</html>
