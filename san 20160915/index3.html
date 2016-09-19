@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas{
+            position: absolute;
+            top:0;
+            z-index: 999;
+        }
+        #canvas2{
+            position: absolute;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<!--用canvas制作即时时钟，然后用save和restore进行重复设置-->
+<!--首先，绘制好画布，建立绘画对象，然后就开始画表盘。先画一个只有四个指针的好了
+，盘用arc绘画，然后指针用路径进行绘画，画好了save保存起来-->
+<!--第二步，绘制时钟，首先要绘制时钟，有两个大部分，一个是得到当前时间，一个是通过时间值
+绘画出来相对应的指针，先做第二个好了，绘画的时针分针秒针的中心都在表盘中央，指针的末端用
+lineTO ，那他们的对应关系呢，用角度把，一个格子是30度，-->
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<canvas id="canvas2" width="1000" height="1000"></canvas>
+<script>
+    var canvas=document.getElementById("canvas");
+    var canvas2=document.getElementById("canvas2");
+    var pen=canvas.getContext("2d");
+    var pen2=canvas2.getContext("2d");
+    var r=100,x=200,y=200,hourDeg,minDeg,secDeg;
+    function drawCircle(symbol,r,x,y,width,color,bool) {
+        symbol.beginPath();
+        symbol.lineWidth=width;
+        symbol.fillStyle=color;
+        symbol.arc(x,y,r,0,2*Math.PI,false);
+        if (bool&&bool=="true") symbol.fill();
+        else {symbol.stroke();}
+    }
+    function drawLine(symbol,fromX,fromY,toX,toY,width,color) {
+        symbol.beginPath();
+        symbol.lineWidth=width;
+        symbol.strokeStyle=color;
+        symbol.moveTo(fromX,fromY);
+        symbol.lineTo(toX,toY);
+        symbol.stroke();
+    }
+//    函数的意义是根据对应的角度，然后计算出对应的路径的末尾位置
+    function CalDeg(Deg,r) {
+        this.x=r*Math.sin(Deg*Math.PI/180);
+        this.y=-r*Math.cos(Deg*Math.PI/180);
+        return this;
+    }
+//    根据对应的时间对象得到的当时代表时针，分针，秒针的角度
+    function calTime() {
+        var date=new Date();
+        secDeg=date.getSeconds()*6;
+        minDeg=date.getMinutes()*6+secDeg/60;
+        var hour=date.getHours();
+        if (hour>=12)hour-=12;
+        hourDeg=hour*30+minDeg/60;
+    }
+    function init() {
+        drawCircle(pen2,r,x,y,1.5,"blue","true");
+        drawCircle(pen2,r+1,x,y,1.5,"#000");
+        drawLine(pen2,100,200,130,200,4,"#fff");
+        drawLine(pen2,270,200,300,200,4,"#fff");
+        drawLine(pen2,200,100,200,130,4,"#fff");
+        drawLine(pen2,200,300,200,270,4,"#fff");
+//        pen.save(); save和restore 是用来回复所有的canvas状态，也就是属性的的，
+//        不是用来回复到当时画的路径
+        pen.translate(200,200);
+        setInterval(function () {
+            calTime();
+            pen.clearRect(-200,-200,1000,1000);
+            drawLine(pen,0,0, new CalDeg(secDeg,100).x,new CalDeg(secDeg,100).y,1,"red");
+            drawLine(pen,0,0, new CalDeg(minDeg,70).x,new CalDeg(minDeg,70).y,2,"red");
+            drawLine(pen,0,0, new CalDeg(hourDeg,50).x,new CalDeg(hourDeg,50).y,3,"red");
+        },1000);
+//        pen.restore();
+    }
+    init();
+</script>
+</body>
+</html>
