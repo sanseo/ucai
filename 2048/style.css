@@ -1,0 +1,127 @@
+#box {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.score {
+    color: red
+}
+#table_box {
+    width: 480px;
+    height: 480px;
+    background: #b8af9e;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #eee4da;
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+}
+
+#c00, #c01, #c02, #c03 {
+    top: 16px;
+}
+
+#c10, #c11, #c12, #c13 {
+    top: 132px;
+}
+
+#c20, #c21, #c22, #c23 {
+    top: 248px;
+}
+
+#c30, #c31, #c32, #c33 {
+    top: 364px;
+}
+
+#c00, #c10, #c20, #c30 {
+    left: 16px;
+}
+
+#c01, #c11, #c21, #c31 {
+    left: 132px;
+}
+
+#c02, #c12, #c22, #c32 {
+    left: 248px;
+}
+
+#c03, #c13, #c23, #c33 {
+    left: 364px;
+}
+
+.n2 {
+    background: #eee3da;
+}
+
+.n4 {
+    background: #ede0c8;
+}
+
+.n8 {
+    background: #f2b179;
+}
+
+.n16 {
+    background: #f59563;
+}
+
+.n32 {
+    background: #f67c5f;
+}
+
+.n64 {
+    background: #f65e3b;
+}
+
+.n128 {
+    background: #edcf72;
+}
+
+.n256 {
+    background: #edcc61;
+}
+
+.n512 {
+    background: #9c0;
+}
+
+.n1024 {
+    background: #33b5e5;
+}
+
+.n2048 {
+    background: #09c;
+}
+
+.n4096 {
+    background: #a6c;
+}
+
+.n8192 {
+    background: #93c;
+}
+
+.n16384 {
+    background: red;
+}
+
+.btns {
+    width: 500px;
+    height: 500px;
+    background: rgba(155, 155, 155, 0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
