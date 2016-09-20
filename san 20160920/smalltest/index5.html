@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background{
+            width: 1024px;
+            height: 768px;
+            background: url("rjsg2.jpg");
+            position: absolute;
+            top:0;  bottom: 0;  left: 0;  right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        #title{
+            font-size: 3rem;
+            position: absolute;
+            top:150px;
+            left: 50px;
+            color: #fff;
+        }
+        #circle{
+            position: absolute;
+            top:40px;
+            left: 40px;
+            width: 800px;
+            height: 600px;
+            border: 10px solid #fff;
+            transform: rotate(90deg);
+            transform-origin: -340px  -340px;
+        }
+        #title,#circle{transition: all 2s;}
+        #background:hover #title{
+            left:150px;
+        }
+        #background:hover #circle{
+            transform: rotate(720deg);
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="title">丧失为人的资格</div>
+    <div id="circle"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background {
+            width: 1024px;
+            height: 768px;
+            background: url("rjsg2.jpg");
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #title {
+            font-size: 3rem;
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            color: #fff;
+        }
+
+        #text {
+            opacity: 0;
+            font-size: 2rem;
+            position: absolute;
+            top: 400px;
+            left: 250px;
+            color: #fff;
+            font-family: "Microsoft YaHei";
+        }
+
+        #background:hover #title {
+            left: 250px;
+        }
+
+        #background:hover #text {
+            opacity: 1;
+            top: 250px;
+        }
+
+        #title, #text, .line1, .line2, .line3, .line4 {
+            -webkit-transition: all 2s;
+            -moz-transition: all 2s;
+            -o-transition: all 2s;
+            transition: all 2s;
+        }
+
+        .line1, .line2, .line3, .line4 {
+            position: absolute;
+            background: #fff;
+        }
+
+        .line1 {
+            top: 100px;
+        }
+
+        .line3 {
+            top: 700px;
+        }
+
+        .line1, .line3 {
+            width: 700px;
+            left: 120px;
+            height: 1px;
+            transform: scale(0);
+        }
+
+        .line2 {
+            left: 170px;
+        }
+
+        .line4 {
+            left: 770px;
+        }
+
+        .line2, .line4 {
+            width: 2px;
+            height: 700px;
+            top: 50px;
+            transform: scale(0);
+        }
+
+        #background:hover .line1, #background:hover .line3 {
+            transform: scale(1);
+        }
+
+        #background:hover .line2, #background:hover .line4 {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="title">人间失格</div>
+    <div id="text">主演:生田斗真</div>
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="line4"></div>
+</div>
+</body>
+</html>

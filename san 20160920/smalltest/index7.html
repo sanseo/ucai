@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            perspective: 300px;
+        }
+        #background{
+            width: 355px;
+            height: 500px;
+            background: url("rjsg3.jpg");
+            position: absolute;
+            top:1000px;  bottom: 0;  left: 0;  right: 0;
+            margin: auto;
+            overflow: hidden;
+            -webkit-transition: all 2s;
+            -moz-transition: all 2s;
+            -o-transition: all 2s;
+            transition: all 2s;
+        }
+        #background:hover{
+            transform: translateZ(-100px);
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="title">丧失为人的资格</div>
+</div>
+</body>
+</html>

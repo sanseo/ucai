@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background{
+            width: 355px;
+            height: 500px;
+            background: url("rjsg3.jpg");
+            position: absolute;
+            top:0;  bottom: 0;  left: 0;  right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        #title{
+            width: 80px;
+            font-size: 3rem;
+            position: absolute;
+            top:30px;
+            left: 50px;
+            color: red;
+            transform: skew(-45deg,-45deg);
+            -webkit-transition: all 5s;
+            -moz-transition: all 5s;
+            -o-transition: all 5s;
+            transition: all 5s;
+        }
+        #background:hover #title{
+            transform: skew(0deg,0deg);
+            /*-webkit-animation: disappear 2s linear 0s 2 alternate;*/
+        }
+        @-webkit-keyframes disappear {
+            100%{
+                transform: skew(0deg,0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="title">丧失为人的资格</div>
+</div>
+</body>
+</html>

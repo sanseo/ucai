@@ -1,0 +1,70 @@
+<!--不要太纠结于一些不是你要学习的小细节，比如飞的速度，飞的颜色，等等，先把效果做出来再考这些-->
+<!--然后尝试每次试着尝试新的，有意义的，结合的，而不是对着老东西一遍一遍换着无意义的代码尝试-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #body{
+            width: 1920px;
+            height: 1080px;
+            background: url("ff13.jpg");
+            position: relative;
+        }
+        .text{
+            position: absolute;
+            height: 40px;
+            padding: 5px;
+            margin: 5px;
+            color: #000;
+            line-height: 40px;
+            font-size: 1.2rem;
+            left: -500px;
+            transition: left 1s;
+            -webkit-transition:all 1s;
+            -moz-transition:all 1s;
+            -o-transition: all 1s;
+            background: #fff;
+        }
+        .text1{
+            top: 300px;
+        }
+        .text2{
+            top: 400px;
+        }
+        .text3{
+            top: 500px;
+        }
+
+       #body:hover .text1{
+            transition-delay: 1s;
+            -webkit-transition-delay: 1.7s;
+            -moz-transition-delay: 1.7s;
+            -o-transition-delay:  1.7s;
+            left: 100px;
+        }
+        #body:hover .text2{
+            transition-delay: 0.9s;
+            -webkit-transition-delay: 1.9s;
+            -moz-transition-delay: 1.9s;
+            -o-transition-delay:  1.9s;
+            left: 100px;
+        }
+        #body:hover .text3{
+            transition-delay: 1s;
+            -webkit-transition-delay: 2.3s;
+            -moz-transition-delay: 2.3s;
+            -o-transition-delay:  2.3s;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="body">
+    <div class="text text1">你好你好你好你好你好</div>
+    <div class="text text2">我叫我叫我叫我叫我叫我叫</div>
+    <div class="text text3">黄诗剑黄诗剑黄诗剑黄诗剑</div>
+</div>
+</body>
+</html>

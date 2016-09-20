@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background{
+            width: 1000px;
+            height: 500px;
+            background-image:url("rjsg.jpg");
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+        #title{
+            top:0;
+            font-size: 4rem;
+            color: #fff;
+            position: absolute;
+            left: 30px;
+        }
+        #text,#title{
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+        #text{
+            background: #fff;
+            position: absolute;
+            bottom: -54px;
+        }
+        #background:hover #title{
+            top: 50px;
+        }
+        #background:hover #text{
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div class="bool"></div>
+    <div id="title">人间失格</div>
+    <div id="text">
+        《人间失格》（又名《丧失为人的资格》）日本小说家太宰治最具影响力的小说作品，发表于1948年，是一部自传体的小说。纤细的自传体中透露出极致的颓废，毁灭式的绝笔之作。太宰治巧妙地将自己的人生与思想，隐藏于主角叶藏的人生遭遇，藉由叶藏的独白，窥探太宰治的内心世界——“充满了可耻的一生”。在发表该作品的同年，太宰治自杀身亡。[1]
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background{
+            width: 1024px;
+            height: 768px;
+            background: url("rjsg2.jpg");
+            position: absolute;
+            top:0;  bottom: 0;  left: 0;  right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        #title{
+            font-size: 3rem;
+            position: absolute;
+            top:20px;
+            left: 50px;
+            color: #fff;
+        }
+        #author{
+            padding-right: 200px;
+            width: 1848px;
+            left: -1024px;
+            height: 400px;
+            position: absolute;
+            bottom: -400px;
+            background: #fff;
+            text-align: right;
+            color: #000;
+            font-size: 4rem;
+            /*transform-origin: ;*/
+        }
+        #background:hover #title{
+            top: 100px;
+        }
+        #background:hover #author{
+            transform: rotateZ(-10deg);
+        }
+        #title,#author{transition: all 1s;}
+    </style>
+</head>
+<body>
+<!--快捷标签嵌套里不能加括号-->
+<!--而且快捷生成，鼠标必须放在语句最后按tab-->
+<div id="background">
+    <h1 id="title">人间失格</h1>
+    <div id="author">太宰治</div>
+</div>
+</body>
+</html>

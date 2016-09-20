@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--你总觉得以为自己懂了这一部分的知识点-->
+    <!--垂直居中方法 1 绝对定位 上下左右都是0,   2.父元素display设置成table cell -->
+    <!--3.用flex 可以在不改变html的情况下改变元素的位置-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #background {
+            width: 1000px;
+            height: 800px;
+            overflow: hidden;
+            position: relative;
+            /*-webkit-perspective: 300px;*/
+        }
+        /*css写动画的时候，要时刻注意，动画要发生在自己这个块上才有过渡*/
+        /*而且要给什么属性加上动画，一定要给这个属性一个初始值*/
+        /*transition 和animation不能一起用，需要操作的还是用transition比较好*/
+        #image {
+            left: 0;
+            background: url("ff13.jpg") ;
+            position: absolute;
+            width: 1200px;
+            height: 800px;
+            transition: left   1s;
+            -webkit-transition: left   1s;
+            -moz-transition: left   1s;
+            -o-transition: left   1s;
+        }
+        .title{
+            position: absolute;
+            bottom: 190px;
+            left: 200px;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        .title,.text{
+            /*用一个trs可以直接生成所有兼容条件的动画*/
+            /*transition: bottom 1s;*/
+            /*-webkit-transition: bottom 1s;*/
+            /*-moz-transition: bottom 1s;*/
+            /*-o-transition: bottom 1s;*/
+        }
+        .text{
+            position: absolute;
+            bottom: -400px;
+            left: 200px;
+            font-weight: 900;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        #background:hover  #image{
+            left: -200px;
+            /*没设置景深的时候，旋转就是相当于以屏幕上的x轴旋转*/
+            transform: rotateX(70deg);
+            /*-webkit-animation: translateImg  2s;*/
+        }
+        #background:hover  .title{
+            bottom: 200px;
+            /*-webkit-animation: translateImg  2s;*/
+        }
+        #background:hover  .text{
+            bottom: 150px;
+            /*-webkit-animation: translateImg  2s;*/
+        }
+
+
+        @-webkit-keyframes translateImg {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: -200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="image"></div>
+    <div class="title">high起来</div>
+    <div class="text">boooooooooooommm！</div>
+</div>
+</body>
+</html>
