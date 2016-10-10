@@ -1,0 +1,55 @@
+<!--作业
+要完成的几个模块，首先是点击跳转到视频页面，然后就出现摄像头，里面显示你自己，
+之后用canvas对摄像头进行截图，然后会显示一个框框，那个框框里面的内容在右边实时更新
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .button{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 30px;
+            background-color: #00A686;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #canvas{
+            display: none;
+        }
+        .getImage{
+            display: none;
+            height: 60px;
+            width: 100px;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            background-color: #00A686;
+            line-height: 60px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="button">开视频</a>
+<!--<video width="400" height="400" id="video" autoplay>-->
+<!--</video>-->
+<div class="getImage">截图</div>
+<canvas width="600" height="400" id="canvas"></canvas>
+<script src="js/main.js"></script>
+<script src="js/canvas.js"></script>
+<!--<script src="js/camera.js"></script>-->
+</body>
+</html>
