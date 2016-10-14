@@ -1,0 +1,9 @@
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.mp3
+*.zip
+*.tar
+node_modules/
